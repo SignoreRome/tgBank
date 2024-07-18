@@ -1,7 +1,27 @@
-spring:
-  application:
-    name: tgBank
-
 bot:
   name: tgYourBankBot
   token: '7292387349:AAHfVRY_yvsirbJ6e5BBr4TIt8N3CYSiwPo'
+
+server:
+  port: ${port}
+
+spring:
+  application:
+    name: tgBank
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${datasource.url}
+    username: ${datasource.username}
+    password: ${datasource.password}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+  liquibase:
+    change-log: classpath:/db/changelog/changelog-master.xml
+
+  data:
+    redis:
+      host: ${redis.host}
+      port: ${redis.port}
+      password: ${redis.password}
