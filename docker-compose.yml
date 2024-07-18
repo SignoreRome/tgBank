@@ -1,0 +1,28 @@
+#Компоуз для запуска всех сервисов
+version: "3.9"
+services:
+  db:
+    container_name: tgBankDb
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: "tgBank"
+      POSTGRES_USER: "pg"
+      POSTGRES_PASSWORD: "pg"
+    ports:
+      - "5432:5432"
+  redis:
+    image: redis
+    container_name: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    environment:
+      - REDIS_PASSWORD=my-password
+      - REDIS_PORT=6379
+      - REDIS_DATABASES=16
+
+volumes:
+  redis_data:
+    driver: local

@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: tgBank
+
+bot:
+  name: tgYourBankBot
+  token: '7292387349:AAHfVRY_yvsirbJ6e5BBr4TIt8N3CYSiwPo'
