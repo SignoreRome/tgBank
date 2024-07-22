@@ -96,27 +96,3 @@ VALUES (2071997, (select id from t_users where phone = '9231817875'), '2023-2-13
 --changeset breslavets:12
 insert into t_cards(type, number, status, balance, account)
 VALUES ('DEBIT', 12345, 'WORK', 20000, (select id from t_accounts where t_accounts.number = 2071997));
-
---changeset breslavets:13
-insert into t_users(fio, birth_date, serial, number, phone)
-VALUES ('Бреславец Ольга Дмитриевна', '2000-6-12', '5046', '777777', '9963796022');
-
---changeset breslavets:14
-insert into t_accounts(number, owner, date_begin, balance, is_main)
-VALUES (12062000, (select id from t_users where phone = '9963796022'), '2022-2-13', 1000000.32, true);
-
---changeset breslavets:15
-insert into t_accounts(number, owner, date_begin, balance)
-VALUES (12062001, (select id from t_users where phone = '9963796022'), '2022-2-13', 777);
-
---changeset breslavets:16
-insert into t_users(fio, birth_date, serial, number, phone)
-VALUES ('Волобуева Ирина Анатольевна', '2000-6-12', '5006', '777777', '9231717262');
-
---changeset breslavets:17
-insert into t_accounts(number, owner, date_begin, balance, is_main)
-VALUES (22011983, (select id from t_users where phone = '9231717262'), '2022-2-13', 10000000.34, true);
-
---changeset breslavets:18
-insert into t_accounts(number, owner, date_begin, balance)
-VALUES (22011984, (select id from t_users where phone = '9231717262'), '2022-2-13', 777);
